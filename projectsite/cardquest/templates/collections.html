@@ -1,21 +1,26 @@
+<!-- collections.html -->
+
 {% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
   <!-- COLLECTIONS -->
-  <section class="collections-container">
+  <!-- <section class="collections-container">
+    <h2>Collections</h2>
     <table class="styled-table">
-      <tbody>      
+      <thead>
         <tr>
           <th>Trainer Name</th>
           <th>Pokemon Card</th>
           <th>Collection Date</th>
         </tr>
-        {% for collection in collections %}
+      </thead>
+      <tbody>
+        {% for collections in collection %}
           <tr>
-            <td>{{ collection.trainer.name }}</td>
-            <td>{{ collection.card.name }}</td>
-            <td>{{ collection.collection_date }}</td>
+            <td>{{ collections.trainer.name }}</td>
+            <td>{{ collections.card.name }}</td>
+            <td>{{ collections.collection_date }}</td>
           </tr>
         {% empty %}
           <tr>
@@ -26,5 +31,82 @@
         {% endfor %}
       </tbody>
     </table>
-  </section>
+  </section> -->
+  <main>
+    <section class="collection-container">
+      <table class="styled-table">
+        <tbody>
+          <tr>
+            <th>Trainer</th>
+            <th>Pokemon Card</th>
+            <th>Collection Date</th>
+          </tr>
+
+          <tr>
+            <td>Ash</td>
+            <td>Pikachu</td>
+            <td>Dec. 6, 2023</td>
+          </tr>
+          <tr>
+            <td>Misty</td>
+            <td>Togepi</td>
+            <td>Dec. 6, 2023</td>
+          </tr>
+          <tr>
+            <td>Brock</td>
+            <td>Onix</td>
+            <td>Dec. 6, 2023</td>
+          </tr>
+          <tr>
+            <td>May</td>
+            <td>Blaziken</td>
+            <td>Dec. 6, 2023</td>
+          </tr>
+          <tr>
+            <td>Dawn</td>
+            <td>Piplup</td>
+            <td>Dec. 6, 2023</td>
+          </tr>
+          <tr>
+            <td>Serena</td>
+            <td>Braixen</td>
+            <td>Dec. 6, 2023</td>
+          </tr>
+          <tr>
+            <td>Clemont</td>
+            <td>Luxrey</td>
+            <td>Dec. 6, 2023</td>
+          </tr>
+          <tr>
+            <td>Lillie</td>
+            <td>Vulpix</td>
+            <td>Dec. 6, 2023</td>
+          </tr>
+          <tr>
+            <td>Gladion</td>
+            <td>Silvally</td>
+            <td>Dec. 6, 2023</td>
+          </tr>
+          <tr>
+            <td>Blue</td>
+            <td>Blastoise</td>
+            <td>Dec. 6, 2023</td>
+          </tr>
+          <tr>
+            <td>Red</td>
+            <td>Charizard</td>
+            <td>Dec. 6, 2023</td>
+          </tr>
+          <tr>
+            <td>Cynthia</td>
+            <td>Garchomp</td>
+            <td>Dec. 6, 2023</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </section>
+  </main>
+  
+{% include 'includes/footer.html' %}
 {% endblock %}

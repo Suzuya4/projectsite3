@@ -16,13 +16,11 @@ class TrainerList(ListView):
     model = Trainer
     context_object_name = 'trainer'
     template_name = 'trainers.html'
-    paginate_by =15
 
 class PokemonCardList(ListView):
     model = PokemonCard
     context_object_name = 'pokemon_cards'
-    template_name = 'pokemon-cards.html'
-    paginate_by = 5
+    template_name = 'pokemon_cards.html'
 
 class CollectionList(ListView):
     model = Collection
@@ -34,4 +32,3 @@ class CollectionList(ListView):
         # Include the related Trainer and PokemonCard in the context
         context['collections'] = Collection.objects.select_related('trainer', 'card').all()
         return context
-

@@ -5,7 +5,7 @@ class BaseModel(models.Model):
     created_at = models.DateTimeField(
         auto_now_add=True, db_index=True)
     updated_at = models.DateTimeField(auto_now=True)
-    
+
     class Meta:
         abstract = True
 class Trainer(BaseModel):
@@ -59,5 +59,4 @@ class PokemonCard(BaseModel):
 class Collection(BaseModel):
     card = models.ForeignKey(PokemonCard, blank=True, null=True, on_delete=models.CASCADE)
     trainer = models.ForeignKey(Trainer, blank=True, null=True, on_delete=models.CASCADE)
-    collection_date = models.DateField()        
-        
+    collection_date = models.DateField()
